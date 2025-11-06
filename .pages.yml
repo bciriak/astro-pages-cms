@@ -1,6 +1,6 @@
 media:
-  input: src/media
-  output: ../public/media
+  input: public/media
+  output: /media
 content:
   - name: projects
     label: Projects
