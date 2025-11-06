@@ -1,0 +1,12 @@
+media:
+  input: src/media
+  output: /media
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/projects
+    filename: "{primary}.md"
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
