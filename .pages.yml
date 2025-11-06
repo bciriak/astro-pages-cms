@@ -1,5 +1,5 @@
 media:
-  input: src/media
+  input: public/media
   output: /media
 content:
   - name: projects
