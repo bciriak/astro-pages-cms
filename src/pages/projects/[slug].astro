@@ -1,0 +1,32 @@
+---
+// src/pages/projects/[slug].astro
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('project');
+  
+  return projects.map(project => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+// Use the render function to render the content
+const { Content } = await render(project);
+---
+
+<html>
+  <head>
+    <title>{project.data.title}</title>
+  </head>
+  <body>
+    <article>
+      <h1>{project.data.title}</h1>
+      
+      <!-- Render the markdown body -->
+      <Content />
+    </article>
+  </body>
+</html>
